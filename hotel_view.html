@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="javascript/hotel_view.js"></script>
+    <style>
+        .page_wrap {
+            border: 1px solid #DDDDDD;
+            width: 700px;
+            height:500px;
+            margin-left: 10px;
+            margin-top:10px;
+        }
+        .image_stack_1 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .page_wrap .image_stack_1 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-left: 5px;
+            margin-top: 0px;
+            border: 1px solid #eee;
+            margin:0;
+        }
+        .img_dec{
+            font-weight: bold;
+            position: relative;
+            background-color: #5e5e5e;
+            opacity: 0.6;
+            color: white;
+            font-size: 20px;
+            left:25%;
+            cursor: pointer;
+            text-align: center;
+            top: 200px;
+            width: 100px;
+            border-radius: 2px;
+        }
+        .img_dec:hover{
+            opacity: 1;
+        }
+        .page_wrap .image_stack_2 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-top: 0px;
+            margin-left: 230px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        .page_wrap .image_stack_3 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-top: 0px;
+            margin-left: 460px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        .page_wrap .image_stack_4 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-left: 5px;
+            margin-top: 230px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        .page_wrap .image_stack_5 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-left: 230px;
+            margin-top: 230px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        .page_wrap .image_stack_6 { /* css style for photo stack */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            margin-left: 460px;
+            margin-top: 230px;
+            border: 1px solid #eee;
+            float: left;
+        }
+        .image_stack_1 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .image_stack_2 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .image_stack_2 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .image_stack_3 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .image_stack_3 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .image_stack_4 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .image_stack_4 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .image_stack_5 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .image_stack_5 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .image_stack_6 img { /* css style for photo stack */
+            border: none;
+            position: absolute;
+            text-decoration: none;
+            margin: 10px 10px;
+            width: 170px;
+            height: 170px;
+        }
+        .image_stack_6 img { /* css style for photo stack */
+            position: absolute;
+            border: 4px solid #FFF;
+        }
+        .photo1 {
+            top: 12px;
+            left: 12px;
+        }
+        .photo2 {
+            top: 11px;
+            left: 12px;
+        }
+        .photo3 {
+            top: 10px;
+            left: 12px;
+        }
+        .photo4 {
+            top: 9px;
+            left: 12px;
+        }
+        .photo5 {
+            top: 8px;
+            left: 12px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .photo6 {
+            top: 7px;
+            left: 12px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .photo7 {
+            top: 6px;
+            left: 9px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .photo8 {
+            top: 5px;
+            left: 6px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .photo9 {
+            top: 4px;
+            left: 3px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        .photo10 {
+            top: 3px;
+            left: 2px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 1s ease-out;
+        }
+        .photo10:hover{
+            cursor: pointer;
+            transform: scale(1.1) rotate(10deg);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="page_wrap">
+    <!--Stack 1  -->
+    <div class="image_stack_1">
+        <img  class="photo1" src="images/酒店展览/酒店房间/1.jpg">
+        <img  class="photo2" src="images/酒店展览/酒店房间/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/酒店房间/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/酒店房间/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/酒店房间/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/酒店房间/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/酒店房间/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/酒店房间/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/酒店房间/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/酒店房间/10.jpg">
+        <div class="img_dec">酒店房间</div>
+    </div>
+    <div class="image_stack_2">
+        <img  class="photo1" src="images/酒店展览/酒店夜景/1.jpg"  >
+        <img  class="photo2" src="images/酒店展览/酒店夜景/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/酒店夜景/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/酒店夜景/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/酒店夜景/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/酒店夜景/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/酒店夜景/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/酒店夜景/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/酒店夜景/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/酒店夜景/10.jpg" >
+        <div class="img_dec">酒店夜景</div>
+    </div>
+    <div class="image_stack_3">
+        <img  class="photo1" src="images/酒店展览/酒店走廊/1.jpg"  >
+        <img  class="photo2" src="images/酒店展览/酒店走廊/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/酒店走廊/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/酒店走廊/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/酒店走廊/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/酒店走廊/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/酒店走廊/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/酒店走廊/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/酒店走廊/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/酒店走廊/10.jpg" >
+        <div class="img_dec">酒店走廊</div>
+    </div>
+    <div class="image_stack_4">
+        <img  class="photo1" src="images/酒店展览/夏日风情/1.jpg"  >
+        <img  class="photo2" src="images/酒店展览/夏日风情/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/夏日风情/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/夏日风情/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/夏日风情/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/夏日风情/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/夏日风情/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/夏日风情/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/夏日风情/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/夏日风情/10.jpg" >
+        <div class="img_dec">夏日风景</div>
+    </div>
+    <div class="image_stack_5">
+        <img  class="photo1" src="images/酒店展览/酒店装饰/1.jpg"  >
+        <img  class="photo2" src="images/酒店展览/酒店装饰/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/酒店装饰/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/酒店装饰/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/酒店装饰/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/酒店装饰/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/酒店装饰/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/酒店装饰/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/酒店装饰/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/酒店装饰/10.jpg" >
+        <div class="img_dec">酒店装饰</div>
+    </div>
+    <div class="image_stack_6">
+        <img  class="photo1" src="images/酒店展览/酒店美食/1.jpg"  >
+        <img  class="photo2" src="images/酒店展览/酒店美食/2.jpg" >
+        <img  class="photo3"  src="images/酒店展览/酒店美食/3.jpg" >
+        <img  class="photo4"  src="images/酒店展览/酒店美食/4.jpg" >
+        <img  class="photo5"  src="images/酒店展览/酒店美食/5.jpg" >
+        <img  class="photo6"  src="images/酒店展览/酒店美食/6.jpg" >
+        <img  class="photo7"  src="images/酒店展览/酒店美食/7.jpg" >
+        <img  class="photo8"  src="images/酒店展览/酒店美食/8.jpg" >
+        <img  class="photo9"  src="images/酒店展览/酒店美食/9.jpg" >
+        <img  class="photo10"  src="images/酒店展览/酒店美食/10.jpg" >
+        <div class="img_dec">酒店美食</div>
+    </div>
+</div>
+</body>
+</html>
